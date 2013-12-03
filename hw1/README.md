@@ -1,18 +1,12 @@
-MongoDB for Developers
+Homework 1
 =====
 
-Week 1: Introduction & Overview
+$ mongorestore <br>
+$ mongo
 
-Week 2: CRUD (Creating, Reading and Updating Data)
+> use m101 <br>
+> db.hw1.find()
 
-Week 3: Schema Design
-
-Week 4: Performance
-
-Week 5: Aggregation Framework 
-
-Week 6: Application Engineering
-
-Week 7: Case Studies 
+** using the Mongo shell, perform a findone on the collection called hw1 in the database m101. That will return one document. Please provide the value corresponding to the "answer" key from the document returned.
 
 
