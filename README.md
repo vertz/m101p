@@ -110,18 +110,3 @@ $ sudo easy_install bottle             # alternative without pip
 $ sudo apt-get install python-bottle   # works for debian, ubuntu, ...
 ```
 
-Either way, you’ll need Python 2.5 or newer (including 3.x) to run bottle applications. If you do not have permissions to install packages system-wide or simply don’t want to, create a virtualenv first:
-```
-$ virtualenv develop              # Create virtual environment
-$ source develop/bin/activate     # Change default python to virtual one
-(develop)$ pip install -U bottle  # Install bottle to virtual environment
-```
-
-Or, if virtualenv is not installed on your system:
-```
-$ wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
-$ python virtualenv.py develop    # Create virtual environment
-$ source develop/bin/activate     # Change default python to virtual one
-(develop)$ pip install -U bottle  # Install bottle to virtual environment
-```
-
