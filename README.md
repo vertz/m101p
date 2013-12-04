@@ -72,3 +72,56 @@ You may restart the mongod process by issuing the following command:
 ```
 sudo service mongodb restart
 ```
+
+### <a href = "http://www.pip-installer.org/en/latest/installing.html">Install pip on Ubuntu</a>
+
+```
+sudo apt-get install python-pip
+```
+
+### <a href = "http://api.mongodb.org/python/current/installation.html">Installing / Upgrading — PyMongo</a>
+
+We prefer pip to install pymongo on platforms other than Windows:
+```
+sudo pip install pymongo
+```
+
+To get a specific version of pymongo:
+```
+sudo pip install pymongo==2.1.1
+```
+
+To upgrade using pip:
+```
+sudo pip install --upgrade pymongo
+```
+
+### <a href = "http://bottlepy.org/docs/dev/tutorial.html">Install Bottle on Ubuntu</a>
+
+Bottle does not depend on any external libraries. You can just download bottle.py into your project directory and start coding:
+```
+$ wget http://bottlepy.org/bottle.py
+```
+
+This will get you the latest development snapshot that includes all the new features. If you prefer a more stable environment, you should stick with the stable releases. These are available on PyPI and can be installed via pip (recommended), easy_install or your package manager:
+```
+$ sudo pip install bottle              # recommended
+$ sudo easy_install bottle             # alternative without pip
+$ sudo apt-get install python-bottle   # works for debian, ubuntu, ...
+```
+
+Either way, you’ll need Python 2.5 or newer (including 3.x) to run bottle applications. If you do not have permissions to install packages system-wide or simply don’t want to, create a virtualenv first:
+```
+$ virtualenv develop              # Create virtual environment
+$ source develop/bin/activate     # Change default python to virtual one
+(develop)$ pip install -U bottle  # Install bottle to virtual environment
+```
+
+Or, if virtualenv is not installed on your system:
+```
+$ wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+$ python virtualenv.py develop    # Create virtual environment
+$ source develop/bin/activate     # Change default python to virtual one
+(develop)$ pip install -U bottle  # Install bottle to virtual environment
+```
+
