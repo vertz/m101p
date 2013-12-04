@@ -15,7 +15,7 @@ Week 6: Application Engineering
 
 Week 7: Case Studies 
 
-#### <a href = "http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">Install MongoDB on Ubuntu</a>
+### <a href = "http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">Install MongoDB on Ubuntu</a>
 
 The Ubuntu package management tool (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the MongoDB public GPG Key:
 
