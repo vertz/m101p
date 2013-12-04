@@ -31,3 +31,10 @@ Now it’s your turn to analyze the data set. Find all exam scores greater than 
 ```
 > db.grades.find({score : {$gte : 65}}).sort({score : 1})
 ```
+#### <a href="http://stackoverflow.com/questions/19527564/mongo-couldnt-connect-to-server-127-0-0-127017-at-src-mongo-shell-mongo-js14">Error: couldn't connect to server 127.0.0.1:27017 src/mongo/shell/mongo.js</a>
+
+Most probably a problem with mongo lock. solved with the following commands:
+```
+sudo rm /var/lib/mongodb/mongod.lock
+sudo service mongodb restart
+```
