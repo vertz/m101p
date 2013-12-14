@@ -59,7 +59,7 @@ class BlogPostDAO:
             
         except:
             print "Error inserting post"
-            print "Unexpected error0:", sys.exc_info()[0]
+            print "Unexpected error:", sys.exc_info()[0]
 
         return permalink
 
@@ -75,7 +75,7 @@ class BlogPostDAO:
             cursor = cursor.sort( { '$natural' : -1 } )
             
         except:
-            print "Unexpected error1:", sys.exc_info()[0]
+            print "Unexpected error:", sys.exc_info()[0]
 
         l = []
         
@@ -106,7 +106,7 @@ class BlogPostDAO:
             post = self.posts.find_one(query)
             
         except:
-            print "Unexpected error2:", sys.exc_info()[0]
+            print "Unexpected error:", sys.exc_info()[0]
         
 
         if post is not None:
@@ -137,7 +137,7 @@ class BlogPostDAO:
 
         except:
             print "Could not update the collection, error"
-            print "Unexpected error3:", sys.exc_info()[0]
+            print "Unexpected error:", sys.exc_info()[0]
             return 0
 
 
