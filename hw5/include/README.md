@@ -17,3 +17,22 @@ Please double quote all keys to make it easier to check your result.
 ```
 > db.products.aggregate([{$group: {_id:"$category", num_products:{$sum:1}}}])
 ```
+
+Suppose we have a collection of populations by postal code. The postal codes in are in the _id field, and are therefore unique. Documents look like this:
+```
+{
+	"city" : "CLANTON",
+	"loc" : [
+		-86.642472,
+		32.835532
+	],
+	"pop" : 13990,
+	"state" : "AL",
+	"_id" : "35045"
+}
+```
+
+Write an aggregation query to sum up the population (pop) by state and put the result in a field called population.
+```
+> db.zips.aggregate([{$group:{_id:"$state", population:{$sum:"$pop"}}}])
+```
