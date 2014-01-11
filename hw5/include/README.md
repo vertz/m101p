@@ -17,6 +17,7 @@ Please double quote all keys to make it easier to check your result.
 ```
 > db.products.aggregate([{$group: {_id:"$category", num_products:{$sum:1}}}])
 ```
+=====
 
 Suppose we have a collection of populations by postal code. The postal codes in are in the _id field, and are therefore unique. Documents look like this:
 ```
