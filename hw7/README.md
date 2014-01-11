@@ -36,7 +36,7 @@ From the above, you can conclude that the image with _id = 99705 is in album 67.
 
 Your task is to write a program to remove every image from the images collection that appears in no album. Or put another way, if an image does not appear in at least one album, it's an orphan and should be removed from the images collection. 
 
-Start by using mongoimport to import your albums.json and images.json collections. (Did you notice the links in the previous sentence?) 
+Start by using mongoimport to import your albums.json and images.json collections.
 
 When you are done removing the orphan images from the collection, there should be 89,737 documents in the images collection. To prove you did it correctly, what are the total number of images with the tag 'kittens" after the removal of orphans? As as a sanity check, there are 49,932 images that are tagged 'kittens' before you remove the images. 
 Hint: you might consider creating an index or two or your program will take a long time to run
