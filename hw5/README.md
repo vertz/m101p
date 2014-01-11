@@ -116,12 +116,12 @@ In this problem you will calculate the number of people who live in a zip code i
 
 The project operator can extract the first digit from any field. For example, to extract the first digit from the city field, you could write this query:
 ```
-db.zips.aggregate([
+> db.zips.aggregate([
     {$project: 
-     {
-	first_char: {$substr : ["$city",0,1]},
-     }	 
-   }
+        { 
+            first_char: {$substr : ["$city",0,1]},
+        }
+    }
 ])
 ```
 
