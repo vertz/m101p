@@ -29,7 +29,7 @@ The answer, deep in the resulting document, should be student_id 164 with an ave
 Now it’s your turn to analyze the data set. Find all exam scores greater than or equal to 65. and sort those scores from lowest to highest.
 
 ```
-> db.grades.find({score : {$gte : 65}}).sort({score : 1})
+> db.grades.find({score : {$gte : 65}, type : "exam"}).sort({score : 1})
 ```
 
 #### Homework 2.2
