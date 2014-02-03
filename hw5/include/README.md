@@ -110,6 +110,9 @@ Again, thinking about the zipcode collection, write an aggregation query with a 
 ```
 =====
 
+Write an aggregation query with just a sort stage to sort by (state, city), both ascending
+```
+> db.zips.aggregate([{$sort:{state:1,city:1}}])
+```
 
-=====
 
