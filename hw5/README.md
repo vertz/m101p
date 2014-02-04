@@ -16,8 +16,8 @@ To help you verify your work before submitting, the author with the least commen
 
 ```
 > db.posts.aggregate([{$unwind: "$comments"},
-                      {$group: { _id: "$comments.author", "tot_comm": {$sum:1}} },
-                      {$sort: { tot_comm: -1 }},
+                      {$group : { _id: "$comments.author", "n_comments": {$sum:1}}},
+                      {$sort  : { n_comments: -1 }},
                       {$limit : 1 }])
 ```
 
