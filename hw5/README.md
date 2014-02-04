@@ -41,11 +41,13 @@ Please note:
 <li>A city might have multiple zip codes.</li>
 </ul>
 
-```
-> db.zips.aggregate([{$match: {$or: [{state:"CA"},{state: "NY"}]}},      
-                     {$group: { _id: {'citt': "$city", 'stato': "$state" }, 'popolazione': {$sum: "$pop"}}},
-                     {$match: {popolazione: {$gte: 25000}}}, 
-                     {$group: { _id: "$city", 'avg_pop': {$avg: "$popolazione"}}}])
+```                
+> db.zips.aggregate([
+	{$match: {$or : [{state:'CA'},{state:'NY'}]}},
+	{$group: {_id : {city:'$city', state:'$state'}, pop:{$sum:'$pop'}}},
+	{$match: {pop : {$gt : 25000}}},
+	{$group: {_id :null, avg_pop:{$avg:'$pop'}}}
+  ])                      
 ```
 
 #### Homework 5.3
