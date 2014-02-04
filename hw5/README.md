@@ -133,7 +133,7 @@ Note that you will need to probably change your projection to send more info thr
 
 ```
 > db.zips.aggregate([
-	{$project: { city:1, pop:1, first_char: {$substr : ["$city",0,1]}}},
+	{$project: {first_char: {$substr : ["$city",0,1]}, pop: 1}},
 	{$match  : {first_char : {$regex : /[0-9]/}}},
 	{$group  : {_id: null, sum: {$sum : '$pop'}}}
 ])
