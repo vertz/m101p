@@ -103,13 +103,13 @@ Hint/Strategy: You need to group twice to solve this problem. You must figure ou
 What is the class_id with the highest average student average.
 ```
 > db.grades.aggregate([
-    {$unwind: "$scores" },
-    {$match: {$or: [{"scores.type":"exam"}, {"scores.type": "homework"}]}},
-    {$group: { _id: {'studente': "$student_id", 'classe': "$class_id" }, 'punteggiomedio': {$avg: "$scores.score"}}},
-    {$group: { _id: "$_id.classe",'punt': {$avg: '$punteggiomedio'}}},
-    {$sort: { punt: -1 }},
-    {$limit : 1 }
-  ])
+	{$unwind: '$scores'},
+	{$match : {'scores.type':{$ne:'quiz'}}},
+	{$group : {_id : {student:'$student_id', class:'$class_id'}, gpa:{$avg:'$scores.score'}}},
+	{$group : {_id:'$_id.class', class_gpa:{$avg:'$gpa'}}},
+	{$sort  : {class_gpa : -1}},
+	{$limit : 1}
+  ])  
 ```
 
 #### Homework 5.4
