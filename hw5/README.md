@@ -133,10 +133,10 @@ Note that you will need to probably change your projection to send more info thr
 
 ```
 > db.zips.aggregate([
-    {$project: { _id: 0, first_char: {$substr : ["$city",0,1]}, zip: '$_id', popolazione: '$pop'}},
-    {$match: {'first_char': {$regex: '^[0-9]$'}}  }, 
-    {$group: {_id: null, totpop: {$sum: '$popolazione'}}}
-  ])
+	{$project: { city:1, pop:1, first_char: {$substr : ["$city",0,1]}}},
+	{$match  : {first_char : {$regex : /[0-9]/}}},
+    	{$group  : {_id: null, sum: {$sum : '$pop'}}}
+])
 ```
 
 #### <a href="http://stackoverflow.com/questions/19527564/mongo-couldnt-connect-to-server-127-0-0-127017-at-src-mongo-shell-mongo-js14">Error: couldn't connect to server 127.0.0.1:27017 src/mongo/shell/mongo.js</a>
